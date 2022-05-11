@@ -2,13 +2,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: coffee-shop-pipeline
-  namespace: rz8zp-argocd
+  namespace: openshift-gitops
 spec:
   destination:
-    namespace: rz8zp-pipeline
+    namespace: openshift-pipelines
     server: https://kubernetes.default.svc
-  project: coffee-shop
+  project: default
   source:
     path: ./coffee-shop-pipeline
-    repoURL: http://homework-gitea.gpte-hw-cicd.svc:3000/earvonen-redhat.com-rz8zp/coffee-shop-final-lab.git
+    repoURL: https://github.com/earvonen/coffee-shop-gitops.git
     targetRevision: HEAD

@@ -2,12 +2,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: coffee-shop-database-prod
-  namespace: rz8zp-argocd
+  namespace: openshift-gitops
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: rz8zp-prod-coffeeshop
-  project: coffee-shop
+    namespace: prod-coffeeshop
+  project: default
   source:
     chart: coffee-shop-postgresql
     helm:
