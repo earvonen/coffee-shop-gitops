@@ -39,7 +39,7 @@ spec:
   - name: MAVEN_MIRROR_URL
     type: string
     description: Maven mirror for Maven Builds
-    default: https://repo1.maven.org/maven2/
+    default: https://mvnrepository.com/
   - name: NEXUS_REGISTRY_URL
     type: string
     description: External URL for the container registry to set the production image from
