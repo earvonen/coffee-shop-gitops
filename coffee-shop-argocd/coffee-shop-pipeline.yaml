@@ -12,3 +12,6 @@ spec:
     path: ./coffee-shop-pipeline
     repoURL: https://github.com/earvonen/coffee-shop-gitops.git
     targetRevision: HEAD
+  syncPolicy:
+    automated:
+      selfHeal: false
