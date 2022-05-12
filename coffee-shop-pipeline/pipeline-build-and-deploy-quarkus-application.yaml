@@ -132,11 +132,8 @@ spec:
       kind: ClusterTask
       name: openshift-client
     params:
-    - name: ARGS
-      value:
-      - tag
-      - $(params.NAMESPACE_DEV)/$(params.APP_NAME):latest
-      - $(params.NAMESPACE_DEV)/$(params.APP_NAME):dev-$(tasks.generate-tag.results.image-tag)
+    - name: SCRIPT
+      value: "tag $(params.NAMESPACE_DEV)/$(params.APP_NAME):latest $(params.NAMESPACE_DEV)/$(params.APP_NAME):dev-$(tasks.generate-tag.results.image-tag)"
 
   - name: set-image-in-dev
     runAfter:
@@ -167,11 +164,8 @@ spec:
       kind: ClusterTask
       name: openshift-client
     params:
-    - name: ARGS
-      value:
-      - tag
-      - $(params.NAMESPACE_DEV)/$(params.APP_NAME):dev-$(tasks.generate-tag.results.image-tag)
-      - $(params.NAMESPACE_DEV)/$(params.APP_NAME):prod-$(tasks.generate-tag.results.image-tag)
+    - name: SCRIPT
+      value: "tag $(params.NAMESPACE_DEV)/$(params.APP_NAME):dev-$(tasks.generate-tag.results.image-tag) $(params.NAMESPACE_DEV)/$(params.APP_NAME):prod-$(tasks.generate-tag.results.image-tag)"
 
   - name: publish-image
     runAfter:
