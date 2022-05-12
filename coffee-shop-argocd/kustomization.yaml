@@ -4,6 +4,7 @@ kind: Kustomization
 
 resources:
 - ./coffee-shop-app-of-apps.yaml
+- ./coffee-shop-projects.yaml
 - ./coffee-shop-database.yaml
 - ./coffee-shop.yaml
 - ./barista.yaml
