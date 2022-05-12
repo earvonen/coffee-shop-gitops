@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: earvonen-coffee-shop-app-of-apps
+  namespace: openshift-gitops
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: openshift-gitops
+  project: default
+  source:
+    path: ./coffee-shop-argocd
+    repoURL: https://github.com/earvonen/coffee-shop-gitops.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      selfHeal: false
