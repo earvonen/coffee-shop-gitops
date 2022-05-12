@@ -23,7 +23,7 @@ spec:
   - name: KUSTOMIZE_GIT_URL
     type: string
     description: The kustomize git repository url
-    default: http://homework-gitea.gpte-hw-cicd.svc:3000/earvonen-redhat.com-rz8zp/coffee-shop-final-lab.git
+    default: https://github.com/earvonen/coffee-shop-gitops.git
   - name: KUSTOMIZE_GIT_REVISION
     type: string
     default: master
@@ -39,7 +39,7 @@ spec:
   - name: MAVEN_MIRROR_URL
     type: string
     description: Maven mirror for Maven Builds
-    default: http://homework-nexus.gpte-hw-cicd.svc:8081/repository/maven-all-public/
+    default: https://repo1.maven.org/maven2/
   - name: NEXUS_REGISTRY_URL
     type: string
     description: External URL for the container registry to set the production image from
@@ -47,7 +47,7 @@ spec:
   - name: NAMESPACE_DEV
     type: string
     description: Namespace where the buildconfig is located
-    default: rz8zp-dev-coffeeshop
+    default: dev-coffeeshop
   - name: DEPLOY_SERVERLESS
     type: string
     default: 'false'
